@@ -1,5 +1,5 @@
 /*
-Class that holds methods that I removed from MainGUI and AlertBox because they were causing too much clutter.
+Class that holds methods that I removed from MainLaunchGUI and AlertBox because they were causing too much clutter.
 Generally, this holds non-JavaFX content.
  */
 
@@ -13,7 +13,7 @@ import java.io.File;
 import java.io.PrintWriter;
 
 
-public class SupportBox {
+class SupportBox {
 
     /*
     I was unable to find an FX control that would substitute itemSelect.

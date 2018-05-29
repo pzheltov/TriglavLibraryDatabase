@@ -22,7 +22,7 @@ import javafx.stage.Stage;
 This is the main window and where most operations are performed.
 Introductory windows or similar are not in consideration yet.
  */
-public class MainGUI extends Application {
+public class MainLaunchGUI extends Application {
     public static void main(String[] args) {
 
         // Delete this

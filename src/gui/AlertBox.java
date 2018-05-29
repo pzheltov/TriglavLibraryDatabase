@@ -1,6 +1,6 @@
 /*
 The name is somewhat misleading.
-Windows that do not belong directly in the main menu MainGUI are placed and called from here.
+Windows that do not belong directly in the main menu MainLaunchGUI are placed and called from here.
  */
 
 package gui;
@@ -13,12 +13,11 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class AlertBox {
+class AlertBox {
 
     // For retrieving exit options.
     private static boolean answer;
@@ -216,7 +215,7 @@ public class AlertBox {
 
     }
 
-    static boolean confirmExit(String title, String message) throws Exception {
+    static boolean confirmExit(String title, String message) {
 
         // Initiate primary stage
         primaryStage = new Stage();
