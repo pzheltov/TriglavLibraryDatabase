@@ -1,10 +1,9 @@
 package inventory.print.book;
 
 import inventory.LibraryDatabase;
-import inventory.LibraryIO;
 import inventory.print.Print;
 
-public class Book extends Print implements LibraryIO {
+public class Book extends Print {
     private boolean hardCover;
     private int yearPublished;
 

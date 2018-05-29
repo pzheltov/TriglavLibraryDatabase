@@ -31,8 +31,6 @@ class AlertBox {
     private static Label messageLabel;
 
     // Layouts to be used
-    // See if necessary
-//    private static StackPane stackBox;
     private static HBox hBox;
     private static VBox vBox;
 

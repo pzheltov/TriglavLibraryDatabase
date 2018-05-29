@@ -1,10 +1,9 @@
 package inventory.multimedia.video;
 
 import inventory.LibraryDatabase;
-import inventory.LibraryIO;
 import inventory.multimedia.Multimedia;
 
-public class Video extends Multimedia implements LibraryIO {
+public class Video extends Multimedia {
     private String director;
     private String screenwriter;
 

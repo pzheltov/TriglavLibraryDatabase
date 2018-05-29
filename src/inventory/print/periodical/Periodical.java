@@ -1,10 +1,9 @@
 package inventory.print.periodical;
 
 import inventory.LibraryDatabase;
-import inventory.LibraryIO;
 import inventory.print.Print;
 
-public class Periodical extends Print implements LibraryIO {
+public class Periodical extends Print {
     private int publicationFrequency;
 
     public Periodical() {

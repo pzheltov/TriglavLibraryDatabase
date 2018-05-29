@@ -1,10 +1,9 @@
 package inventory.multimedia.audio;
 
 import inventory.LibraryDatabase;
-import inventory.LibraryIO;
 import inventory.multimedia.Multimedia;
 
-public class Audio extends Multimedia implements LibraryIO {
+public class Audio extends Multimedia {
     private String format;
 
     public Audio() {
