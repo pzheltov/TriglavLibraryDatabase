@@ -23,10 +23,7 @@ public class FalseDatabaseStarter {
 
         Book book1 = new Book("Hundred Years of Solitude", "Gabriel Garcia Marques", "Magical Realism", true, 1991);
         Comics comic1 = new Comics("V for Vendetta", "Miller", "Dystopia", 1, false, true);
-
-        /*
-        TEST
-         */
+        
     }
 }
 
