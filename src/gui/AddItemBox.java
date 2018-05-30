@@ -200,8 +200,8 @@ public class AddItemBox {
         // Adding fields from Book class
 
         // Checkbox for hard-cover
-        CheckBox hardCoverInput = new CheckBox();
-        Label hardcoverLabel = new Label("Hard-cover: ");
+        CheckBox hardCoverInput = new CheckBox("Hard cover");
+//        Label hardcoverLabel = new Label("Hard-cover: ");
 
         // Text field for year published
         TextField yearInput = new TextField();
@@ -223,8 +223,8 @@ public class AddItemBox {
         Label regionLabel = new Label("Region: ");
 
         // Checkbox for hard-cover
-        CheckBox mapInput = new CheckBox();
-        Label mapLabel = new Label("Contains maps: ");
+        CheckBox mapInput = new CheckBox("Contains maps");
+//        Label mapLabel = new Label("Contains maps: ");
 
         // Setting up the Grid Pane
         layout = new GridPane();
@@ -252,11 +252,10 @@ public class AddItemBox {
         layout.add(availableInput, 1, 4);
         layout.add(regionLabel, 1, 5);
         layout.add(regionInput, 1, 6);
-        layout.add(hardcoverLabel, 1, 7);
-        layout.add(hardCoverInput, 1, 8);
-
-        layout.add(mapLabel, 1, 9);
-        layout.add(mapInput, 1, 10);
+//        layout.add(hardcoverLabel, 1, 7);
+        layout.add(hardCoverInput, 1, 7);
+//        layout.add(mapLabel, 1, 9);
+        layout.add(mapInput, 1, 8);
 
         // Buttons
         layout.add(accept, 0, 11);
@@ -325,7 +324,7 @@ public class AddItemBox {
         // Fields specific for a book
 
         // Checkbox for hard-cover
-        CheckBox hardCoverInput = new CheckBox();
+        CheckBox hardCoverInput = new CheckBox("Hard-cover");
         Label hardcoverLabel = new Label("Hard-cover: ");
 
         // Text field for year published
@@ -341,11 +340,11 @@ public class AddItemBox {
         // Fields specific for children's books
 
         // Checkbox for hard-cover
-        CheckBox illustrationInput = new CheckBox();
+        CheckBox illustrationInput = new CheckBox("For illustration");
         Label illustrationLabel = new Label("For illustration: ");
 
         // Checkbox for hard-cover
-        CheckBox interactiveInput = new CheckBox();
+        CheckBox interactiveInput = new CheckBox("Interactive book");
         Label interactiveLabel = new Label("Interactive book: ");
 
         // Setting up the Grid Pane
@@ -372,12 +371,12 @@ public class AddItemBox {
         layout.add(subTypeInput, 1, 2);
         layout.add(availableLabel, 1, 3);
         layout.add(availableInput, 1, 4);
-        layout.add(hardcoverLabel, 1, 5);
+//        layout.add(hardcoverLabel, 1, 5);
         layout.add(hardCoverInput, 1, 6);
-        layout.add(illustrationLabel, 1, 7);
-        layout.add(illustrationInput, 1, 8);
-        layout.add(interactiveLabel, 1, 9);
-        layout.add(interactiveInput, 1, 10);
+//        layout.add(illustrationLabel, 1, 7);
+        layout.add(illustrationInput, 1, 7);
+//        layout.add(interactiveLabel, 1, 9);
+        layout.add(interactiveInput, 1, 8);
 
         // Buttons
         layout.add(accept, 0, 11);
