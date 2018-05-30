@@ -76,7 +76,7 @@ public class MainLaunchGUI extends Application {
             exportLibrary.setOnAction(e -> {
                 try {
                     // Button press creates new window where user inputs file name. File name is sent to supportBox to be printed as export file name
-                    SupportBox.printInfo(AlertBox.importExportBox("Export Library", "Enter File Name: "));
+                    PeripheralBox.printInfo(AlertBox.importExportBox("Export Library", "Enter File Name: "));
                 } catch (Exception e1) {
 
                     System.out.println(e1.getMessage());
@@ -101,7 +101,7 @@ public class MainLaunchGUI extends Application {
             // Show alert box when closing the program
             primaryStage.setOnCloseRequest(event -> {
                 event.consume();
-                SupportBox.closingProgram();
+                PeripheralBox.closingProgram();
             });
 
             // Show

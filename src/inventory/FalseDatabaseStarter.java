@@ -1,3 +1,9 @@
+/*
+This class is temporary.
+
+>> It contains objects that help me with building the program without having to rely on import - export.
+ */
+
 package inventory;
 
 import inventory.multimedia.video.Movie;

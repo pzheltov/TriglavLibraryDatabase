@@ -1,6 +1,8 @@
 /*
-The name is somewhat misleading.
-Windows that do not belong directly in the main menu MainLaunchGUI are placed and called from here.
+MainLaunchGUI calls all additional windows from here.
+
+It would be ideal for this class not to call any further FX classes, that all calling commands are done from the main class.
+This is not a priority for now, however.
  */
 
 package gui;
@@ -116,7 +118,7 @@ class AlertBox {
 
         // Button actions
         // Confirming gets value from selectionChoice drop box and sends it to supportBox for evaluation. supportBox evaluates, calls AddItemBox class
-        accept.setOnAction(event -> SupportBox.ItemSelect(selectionChoice.getValue()));
+        accept.setOnAction(event -> PeripheralBox.ItemSelect(selectionChoice.getValue()));
         reject.setOnAction(event -> primaryStage.close());
 
         // Layout design

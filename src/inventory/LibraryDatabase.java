@@ -1,3 +1,9 @@
+/*
+>> Every object that is created with the most encompassing constructor is automatically added to an ArrayList here
+>> This class contains only static ArrayLists which essentially serve as a database of all objects.
+>> This is my solution for keeping track of objects without utilizing overly complicated methods(), as proposed at FIS.
+ */
+
 package inventory;
 
 import inventory.multimedia.audio.Audio;
@@ -22,9 +28,8 @@ import java.util.ArrayList;
 public class LibraryDatabase {
 
     /*
-    >> Classes Print and Multimedia have not been included in this list.
-    >> Class information is too abstract for this program
-    >> Inventory class is already available to display all information.
+    >> Classes Print and Multimedia have not been included in this list, and these will probably never be added
+    >> Setters will probably be deleted, as they serve no concievable purpose.
      */
 
     private static ArrayList<Inventory> inventoryList = new ArrayList<>();

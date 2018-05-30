@@ -1,6 +1,5 @@
 /*
-Class that holds methods that I removed from MainLaunchGUI and AlertBox because they were causing too much clutter.
-Generally, this holds non-JavaFX content.
+Class holds methods not essential to JavaFX and GUI that were causing too much clutter in main method.
  */
 
 
@@ -13,7 +12,7 @@ import java.io.File;
 import java.io.PrintWriter;
 
 
-class SupportBox {
+class PeripheralBox {
 
     /*
     I was unable to find an FX control that would substitute itemSelect.
@@ -89,7 +88,7 @@ class SupportBox {
                 AddItemBox.addAudio();
                 break;
             default:
-                AlertBox.programError("Error occurred in switch statement in SupportBox class");
+                AlertBox.programError("Error occurred in switch statement in PeripheralBox class");
 
         }
     }
