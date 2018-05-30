@@ -41,7 +41,7 @@ class PeripheralBox {
                 break;
             case "Magazine":
                 System.out.println("Magazine");
-                AddItemBox.addmagazine();
+                AddItemBox.addMagazine();
                 break;
             case "Comics":
                 System.out.println("Comics");

@@ -4,7 +4,7 @@ import inventory.LibraryDatabase;
 
 public class TouristGuide extends Book {
     private String region;
-    private boolean hikingTrails;
+    private boolean includesMap;
 
     public TouristGuide() {
         this("Unknown region", false);
@@ -12,17 +12,17 @@ public class TouristGuide extends Book {
         setType(getClass().getSimpleName());
     }
 
-    public TouristGuide(String region, boolean hikingTrails) {
+    public TouristGuide(String region, boolean includesMap) {
         this.region = region;
-        this.hikingTrails = hikingTrails;
+        this.includesMap = includesMap;
         setInternalID(7);
         setType(getClass().getSimpleName());
     }
 
-    public TouristGuide(String title, String author, String subType, boolean hardCover, int yearPublished, String ddcLocation, String region, boolean hikingTrails) {
+    public TouristGuide(String title, String author, String subType, boolean hardCover, int yearPublished, String ddcLocation, String region, boolean includesMap) {
         super(title, author, subType, hardCover, yearPublished, ddcLocation);
         this.region = region;
-        this.hikingTrails = hikingTrails;
+        this.includesMap = includesMap;
         setInternalID(7);
         setType(getClass().getSimpleName());
 
@@ -38,19 +38,19 @@ public class TouristGuide extends Book {
         this.region = region;
     }
 
-    public boolean isHikingTrails() {
-        return hikingTrails;
+    public boolean isIncludesMap() {
+        return includesMap;
     }
 
-    public void setHikingTrails(boolean hikingTrails) {
-        this.hikingTrails = hikingTrails;
+    public void setIncludesMap(boolean includesMap) {
+        this.includesMap = includesMap;
     }
 
     @Override
     public String toString() {
         return "TouristGuide{" +
                 "region='" + region + '\'' +
-                ", hikingTrails=" + hikingTrails +
+                ", includesMap=" + includesMap +
                 '}';
     }
 
@@ -62,7 +62,7 @@ public class TouristGuide extends Book {
                 .append(getRegion())
                 .append("\r\n")
                 .append("Hiking trails: ")
-                .append(isHikingTrails())
+                .append(isIncludesMap())
                 .append("\r\n");
 
         return sb;
@@ -74,7 +74,7 @@ public class TouristGuide extends Book {
         sb.append(super.returnRawInfo())
                 .append(getRegion())
                 .append("\r\n")
-                .append(isHikingTrails())
+                .append(isIncludesMap())
                 .append("\r\n");
 
         return sb;
