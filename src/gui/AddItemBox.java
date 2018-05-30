@@ -606,6 +606,107 @@ public class AddItemBox {
 
     static void addComics() {
 
+        // Set the stage
+        primaryStage = new Stage();
+        primaryStage.setTitle("Comics");
+        primaryStage.initModality(Modality.APPLICATION_MODAL);
+
+        // Initiate Accept button
+        accept = new Button("Save");
+        accept.setMinSize(90, 30);
+        accept.setMaxSize(30, 10);
+
+        // Initiate Reject button
+        reject = new Button("Cancel");
+        reject.setMinSize(90, 30);
+        reject.setMaxSize(30, 10);
+
+        // Setting up button actions
+        accept.setOnAction(event -> System.out.println("Not set up yet"));
+        reject.setOnAction(event -> primaryStage.close());
+
+        // Instructions
+        Label instructionsLabel = new Label("Add a comic: ");
+
+        // Adding fields for abstract Inventory class
+
+        // Set title
+        TextField titleInput = new TextField();
+        titleInput.setPromptText("V for Vendetta");
+        Label titleLabel = new Label("Title: ");
+
+        // Choice box for availability
+        ChoiceBox<String> availableInput = new ChoiceBox<>();
+        availableInput.getItems().addAll("Available", "Reserved", "Unavailable");
+        availableInput.setValue("Available");
+        availableInput.setMinWidth(190);
+        Label availableLabel = new Label("Status: ");
+
+        // Adding fields for Print class
+
+        // Text field for author
+        TextField authorInput = new TextField();
+        authorInput.setPromptText("Alan Moore");
+        Label authorLabel = new Label("Author: ");
+
+        // Input sub type (previously called genre)
+        ChoiceBox<String> subTypeInput = new ChoiceBox<>();
+        subTypeInput.getItems().addAll("Superhero", "Alternative", "Esoteric", "Fantasy", "Humor", "Romance");
+        subTypeInput.setValue("Superhero");
+        subTypeInput.setMinWidth(190);
+        Label subTypeLabel = new Label("Type: ");
+
+        // Adding items from Periodical class
+
+        // Adding publication frequency
+        ChoiceBox<String> publicationInput = new ChoiceBox<>();
+        publicationInput.getItems().addAll("Annual", "Bi-annual", "Monthly", "Weekly", "Daily");
+        publicationInput.setValue("Annual");
+        publicationInput.setMinWidth(190);
+        Label publicationLabel = new Label("Publication frequency:");
+
+        // Items specific to Comics class
+
+        // Checking whether it is manga or a graphic novel
+        ChoiceBox<String> graphicNovelInput = new ChoiceBox<>();
+        graphicNovelInput.getItems().addAll("Manga", "Graphic Novel");
+        graphicNovelInput.setValue("Graphic Novel");
+        graphicNovelInput.setMinWidth(190);
+        Label graphicNovelLabel = new Label("Graphic novel or manga: ");
+
+        // Setting up the Grid Pane
+        layout = new GridPane();
+        layout.setPadding(new Insets(20, 45, 45, 45));
+        layout.setHgap(70);
+        layout.setVgap(15);
+
+        // Adding Items to the Grid Pane
+
+        // First column
+        layout.add(instructionsLabel, 0, 0);
+        layout.add(titleLabel, 0, 1);
+        layout.add(titleInput, 0, 2);
+        layout.add(authorLabel, 0, 3);
+        layout.add(authorInput, 0, 4);
+        layout.add(subTypeLabel, 0, 5);
+        layout.add(subTypeInput, 0, 6);
+
+        // Second column
+        layout.add(graphicNovelLabel, 1, 1);
+        layout.add(graphicNovelInput, 1, 2);
+        layout.add(availableLabel, 1, 3);
+        layout.add(availableInput, 1, 4);
+
+        // Buttons
+        layout.add(accept, 0, 11);
+        layout.add(reject, 0, 12);
+
+        // Set up the scene
+        scene = new Scene(layout, 530, 440);
+
+        // Activate the primary stage
+        primaryStage.setScene(scene);
+        primaryStage.showAndWait();
     }
 
     static void addMovie() {
