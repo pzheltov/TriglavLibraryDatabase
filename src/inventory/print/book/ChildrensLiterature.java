@@ -3,8 +3,8 @@ package inventory.print.book;
 import inventory.LibraryDatabase;
 
 public class ChildrensLiterature extends Book {
-    private boolean pictureBook;
-    private boolean fairytale;
+    private boolean illustration; // Meaning whether the child is supposed to read them or paint them
+    private boolean interactive;
 
     public ChildrensLiterature() {
         this(false, false);
@@ -12,17 +12,17 @@ public class ChildrensLiterature extends Book {
         setType(getClass().getSimpleName());
     }
 
-    public ChildrensLiterature(boolean pictureBook, boolean fairytale) {
-        this.pictureBook = pictureBook;
-        this.fairytale = fairytale;
+    public ChildrensLiterature(boolean illustration, boolean interactive) {
+        this.illustration = illustration;
+        this.interactive = interactive;
         setInternalID(15);
         setType(getClass().getSimpleName());
     }
 
-    public ChildrensLiterature(String title, String author, String subType, boolean hardCover, int yearPublished, String ddcLocation, boolean pictureBook, boolean fairytale) {
+    public ChildrensLiterature(String title, String author, String subType, boolean hardCover, int yearPublished, String ddcLocation, boolean illustration, boolean interactive) {
         super(title, author, subType, hardCover, yearPublished, ddcLocation);
-        this.pictureBook = pictureBook;
-        this.fairytale = fairytale;
+        this.illustration = illustration;
+        this.interactive = interactive;
         setInternalID(15);
         setType(getClass().getSimpleName());
 
@@ -30,27 +30,27 @@ public class ChildrensLiterature extends Book {
         LibraryDatabase.addInventory(this);
     }
 
-    public boolean isPictureBook() {
-        return pictureBook;
+    public boolean isIllustration() {
+        return illustration;
     }
 
-    public void setPictureBook(boolean pictureBook) {
-        this.pictureBook = pictureBook;
+    public void setIllustration(boolean illustration) {
+        this.illustration = illustration;
     }
 
-    public boolean isFairytale() {
-        return fairytale;
+    public boolean isInteractive() {
+        return interactive;
     }
 
-    public void setFairytale(boolean fairytale) {
-        this.fairytale = fairytale;
+    public void setInteractive(boolean interactive) {
+        this.interactive = interactive;
     }
 
     @Override
     public String toString() {
         return "ChildrensLiterature{" +
-                "pictureBook=" + pictureBook +
-                ", fairytale=" + fairytale +
+                "illustration=" + illustration +
+                ", interactive=" + interactive +
                 '}';
     }
 
@@ -59,10 +59,10 @@ public class ChildrensLiterature extends Book {
         StringBuilder sb = new StringBuilder();
         sb.append(super.returnFinalInfo())
                 .append("Picture book: ")
-                .append(isPictureBook())
+                .append(isIllustration())
                 .append("\r\n")
                 .append("Fairytale: ")
-                .append(isFairytale())
+                .append(isInteractive())
                 .append("\r\n");
 
         return sb;
@@ -72,9 +72,9 @@ public class ChildrensLiterature extends Book {
     public StringBuilder returnRawInfo() {
         StringBuilder sb = new StringBuilder();
         sb.append(super.returnRawInfo())
-                .append(isPictureBook())
+                .append(isIllustration())
                 .append("\r\n")
-                .append(isFairytale())
+                .append(isInteractive())
                 .append("\r\n");
 
         return sb;
