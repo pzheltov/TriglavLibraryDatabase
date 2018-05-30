@@ -711,6 +711,117 @@ public class AddItemBox {
 
     static void addMovie() {
 
+        // Set the stage
+        primaryStage = new Stage();
+        primaryStage.setTitle("Movie");
+        primaryStage.initModality(Modality.APPLICATION_MODAL);
+
+        // Initiate Accept button
+        accept = new Button("Save");
+        accept.setMinSize(90, 30);
+        accept.setMaxSize(30, 10);
+
+        // Initiate Reject button
+        reject = new Button("Cancel");
+        reject.setMinSize(90, 30);
+        reject.setMaxSize(30, 10);
+
+        // Setting up button actions
+        accept.setOnAction(event -> System.out.println("Not set up yet"));
+        reject.setOnAction(event -> primaryStage.close());
+
+        // Instructions
+        Label instructionsLabel = new Label("Add a new movie: ");
+
+        // Adding fields for abstract Inventory class
+
+        // Set title
+        TextField titleInput = new TextField();
+        titleInput.setPromptText("Cinema Paradiso");
+        Label titleLabel = new Label("Title: ");
+
+        // Choice box for availability
+        ChoiceBox<String> availableInput = new ChoiceBox<>();
+        availableInput.getItems().addAll("Available", "Reserved", "Unavailable");
+        availableInput.setValue("Available");
+        availableInput.setMinWidth(190);
+        Label availableLabel = new Label("Status: ");
+
+        // Adding fields for Multimedia class
+
+        // Text field for author
+        TextField publisherInput = new TextField();
+        publisherInput.setPromptText("Cristaldi Film");
+        Label publisherLabel = new Label("Publisher: ");
+
+        // Input sub type (previously called genre)
+        ChoiceBox<String> subDefInput = new ChoiceBox<>();
+        subDefInput.getItems().addAll("Action", "Adventure", "Horror", "Crime",
+                "Science Fiction", "Epic", "Comedy");
+        subDefInput.setValue("Action");
+        subDefInput.setMinWidth(190);
+        Label subDefLabel = new Label("Type: ");
+
+        // Adding Video class fields
+
+        // Text field for year published
+        TextField directorInput = new TextField();
+        directorInput.setPromptText("Giuseppe Tornatore");
+        Label directorLabel = new Label("Director: ");
+
+        // Text field for screenwriter published
+        TextField screenWriterInput = new TextField();
+        screenWriterInput.setPromptText("Enzo Cannavale");
+        Label screenWriterLabel = new Label("Screenwriter: ");
+
+        // Fields from Movie class
+
+        // Text field for IMDb rating
+        TextField ratingInput = new TextField();
+        ratingInput.setPromptText("7.4");
+        Label ratingLabel = new Label("IMDb rating:");
+
+        // Input whether movie is a Hollywood production
+        CheckBox hollywoodInput = new CheckBox();
+        Label hollywoodLabel = new Label();
+
+        // Setting up the Grid Pane
+        layout = new GridPane();
+        layout.setPadding(new Insets(20, 45, 45, 45));
+        layout.setHgap(70);
+        layout.setVgap(15);
+
+        // Adding Items to the Grid Pane
+
+        // First column
+        layout.add(instructionsLabel, 0, 0);
+        layout.add(titleLabel, 0, 1);
+        layout.add(titleInput, 0, 2);
+        layout.add(directorLabel, 0, 3);
+        layout.add(directorInput, 0, 4);
+        layout.add(subDefLabel, 0, 5);
+        layout.add(subDefInput, 0, 6);
+
+        //Second column
+        layout.add(publisherLabel, 1, 1);
+        layout.add(publisherInput, 1, 2);
+        layout.add(ratingLabel, 1, 3);
+        layout.add(ratingInput, 1, 4);
+        layout.add(availableLabel, 1, 5);
+        layout.add(availableInput, 1, 6);
+
+
+        // Buttons
+        layout.add(accept, 0, 11);
+        layout.add(reject, 0, 12);
+
+        // Set up the scene
+        scene = new Scene(layout, 550, 430);
+
+        // Activate the primary stage
+        primaryStage.setScene(scene);
+        primaryStage.showAndWait();
+
     }
 
     static void addDocumentary() {
