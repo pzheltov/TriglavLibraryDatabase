@@ -7,7 +7,6 @@ This class is temporary.
 package inventory;
 
 import inventory.multimedia.video.Movie;
-import inventory.print.book.Book;
 import inventory.print.periodical.Comics;
 
 import java.util.ArrayList;
@@ -27,7 +26,6 @@ public class FalseDatabaseStarter {
         Movie movie7 = new Movie("Good Morning Vietnam", "Tristar Columbia", "Michael Bay", "Lindsey Ellis", 2.1, true);
         Movie movie8 = new Movie("Platoon", "Tristar Columbia", "Michael Bay", "Lindsey Ellis", 2.1, true);
 
-        Book book1 = new Book("Hundred Years of Solitude", "Gabriel Garcia Marques", "Magical Realism", true, 1991);
         Comics comic1 = new Comics("V for Vendetta", "Miller", "Dystopia", 1, false, true);
 
     }
