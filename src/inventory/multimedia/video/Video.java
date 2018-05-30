@@ -20,8 +20,8 @@ public class Video extends Multimedia {
         setType(getClass().getSimpleName());
     }
 
-    public Video(String title, String publisher, String director, String screenwriter) {
-        super(title, publisher);
+    public Video(String title, String publisher, String subDefine, String director, String screenwriter) {
+        super(title, publisher, subDefine);
         this.director = director;
         this.screenwriter = screenwriter;
         setInternalID(4);

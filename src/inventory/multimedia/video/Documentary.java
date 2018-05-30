@@ -19,8 +19,8 @@ public class Documentary extends Video {
         setType(getClass().getSimpleName());
     }
 
-    public Documentary(String title, String publisher, String director, String screenwriter, boolean color, int topic) {
-        super(title, publisher, director, screenwriter);
+    public Documentary(String title, String publisher, String subDefine, String director, String screenwriter, boolean color, int topic) {
+        super(title, publisher, subDefine, director, screenwriter);
         this.color = color;
         this.topic = topic;
         setInternalID(12);

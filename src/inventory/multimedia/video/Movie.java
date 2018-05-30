@@ -19,8 +19,8 @@ public class Movie extends Video {
         setType(getClass().getSimpleName());
     }
 
-    public Movie(String title, String publisher, String director, String screenwriter, double ratingIMDB, boolean hollywoodProduction) {
-        super(title, publisher, director, screenwriter);
+    public Movie(String title, String publisher, String subDefine, String director, String screenwriter, double ratingIMDB, boolean hollywoodProduction) {
+        super(title, publisher, subDefine, director, screenwriter);
         this.ratingIMDB = ratingIMDB;
         this.hollywoodProduction = hollywoodProduction;
         setInternalID(8);

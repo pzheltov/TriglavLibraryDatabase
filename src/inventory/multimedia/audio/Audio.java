@@ -18,8 +18,8 @@ public class Audio extends Multimedia {
         setType(getClass().getSimpleName());
     }
 
-    public Audio(String title, String publisher, String format) {
-        super(title, publisher);
+    public Audio(String title, String publisher, String subDefine, String format) {
+        super(title, publisher, subDefine);
         this.format = format;
         setInternalID(6);
         setType(getClass().getSimpleName());

@@ -19,8 +19,8 @@ public class Music extends Audio {
         setType(getClass().getSimpleName());
     }
 
-    public Music(String title, String publisher, String format, String artist, String album) {
-        super(title, publisher, format);
+    public Music(String title, String publisher, String subDefine, String format, String artist, String album) {
+        super(title, publisher, subDefine, format);
         this.artist = artist;
         this.album = album;
         setInternalID(10);
