@@ -392,6 +392,111 @@ public class AddItemBox {
 
     static void addNewspaper() {
 
+
+        // Set the stage
+        primaryStage = new Stage();
+        primaryStage.setTitle("Newspaper");
+        primaryStage.initModality(Modality.APPLICATION_MODAL);
+
+        // Initiate Accept button
+        accept = new Button("Save");
+        accept.setMinSize(90, 30);
+        accept.setMaxSize(30, 10);
+
+        // Initiate Reject button
+        reject = new Button("Cancel");
+        reject.setMinSize(90, 30);
+        reject.setMaxSize(30, 10);
+
+        // Setting up button actions
+        accept.setOnAction(event -> System.out.println("Not set up yet"));
+        reject.setOnAction(event -> primaryStage.close());
+
+        // Instructions
+        Label instructionsLabel = new Label("Add a newspaper: ");
+
+        // Adding fields for abstract Inventory class
+
+        // Set title
+        TextField titleInput = new TextField();
+        titleInput.setPromptText("The Intercept");
+        Label titleLabel = new Label("Title: ");
+
+        // Choice box for availability
+        ChoiceBox<String> availableInput = new ChoiceBox<>();
+        availableInput.getItems().addAll("Available", "Reserved", "Unavailable");
+        availableInput.setValue("Available");
+        availableInput.setMinWidth(190);
+        Label availableLabel = new Label("Status: ");
+
+        // Adding fields for Print class
+
+        // Text field for author
+        TextField authorInput = new TextField();
+        authorInput.setPromptText("Glenn Greenwald");
+        Label authorLabel = new Label("Author: ");
+
+        // Input sub type (previously called genre)
+        ChoiceBox<String> subTypeInput = new ChoiceBox<>();
+        subTypeInput.getItems().addAll("Broadsheet", "Niche", "Shopper Papers", "Mailed");
+        subTypeInput.setValue("Broadsheet");
+        subTypeInput.setMinWidth(190);
+        Label subTypeLabel = new Label("Type: ");
+
+        // Adding items from Periodical class
+
+        // Adding publication frequency
+        ChoiceBox<String> publicationInput = new ChoiceBox<>();
+        publicationInput.getItems().addAll("Annual", "Bi-annual", "Monthly", "Weekly", "Daily");
+        publicationInput.setValue("Annual");
+        publicationInput.setMinWidth(190);
+        Label publicationLabel = new Label("Publication frequency:");
+
+        // Items specific for the Newspaper class
+
+        // Creating a choice box to covers two variables: tabloid and investigative journalism. This way only one option is available
+        ChoiceBox<String> informationTypeInput = new ChoiceBox<>();
+        informationTypeInput.getItems().addAll("Investigative Journalism", "Tabloid");
+        informationTypeInput.setValue("Tabloid");
+        informationTypeInput.setMinWidth(190);
+        Label informationTypeLabel = new Label("Quality of information: ");
+
+        // Setting up the Grid Pane
+        layout = new GridPane();
+        layout.setPadding(new Insets(20, 45, 45, 45));
+        layout.setHgap(70);
+        layout.setVgap(15);
+
+        // Adding Items to the Grid Pane
+
+        // First column
+        layout.add(instructionsLabel, 0, 0);
+        layout.add(titleLabel, 0, 1);
+        layout.add(titleInput, 0, 2);
+        layout.add(authorLabel, 0, 3);
+        layout.add(authorInput, 0, 4);
+        layout.add(subTypeLabel, 0, 5);
+        layout.add(subTypeInput, 0, 6);
+
+        // Second column
+        layout.add(publicationLabel, 1, 1);
+        layout.add(publicationInput, 1, 2);
+        layout.add(informationTypeLabel, 1, 3);
+        layout.add(informationTypeInput, 1, 4);
+        layout.add(availableLabel, 1, 5);
+        layout.add(availableInput, 1, 6);
+
+        // Buttons
+        layout.add(accept, 0, 11);
+        layout.add(reject, 0, 12);
+
+        // Set up the scene
+        scene = new Scene(layout, 530, 440);
+
+        // Activate the primary stage
+        primaryStage.setScene(scene);
+        primaryStage.showAndWait();
+
     }
 
     static void addMagazine() {
