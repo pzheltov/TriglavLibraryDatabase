@@ -19,8 +19,8 @@ public class TouristGuide extends Book {
         setType(getClass().getSimpleName());
     }
 
-    public TouristGuide(String title, String author, String genre, boolean hardCover, int yearPublished, String region, boolean hikingTrails) {
-        super(title, author, genre, hardCover, yearPublished);
+    public TouristGuide(String title, String author, String subType, boolean hardCover, int yearPublished, String ddcLocation, String region, boolean hikingTrails) {
+        super(title, author, subType, hardCover, yearPublished, ddcLocation);
         this.region = region;
         this.hikingTrails = hikingTrails;
         setInternalID(7);

@@ -3,39 +3,29 @@ package inventory.print.book;
 import inventory.LibraryDatabase;
 
 public class Novel extends Book {
-    private String numberDDC;
     private String language;
 
     public Novel() {
-        this("Unknown DDC", "Unknown language");
+        this("Unknown language");
+
         setInternalID(11);
         setType(getClass().getSimpleName());
     }
 
-    public Novel(String numberDDC, String language) {
-        this.numberDDC = numberDDC;
+    public Novel(String language) {
         this.language = language;
         setInternalID(11);
         setType(getClass().getSimpleName());
     }
 
-    public Novel(String title, String author, String genre, boolean hardCover, int yearPublished, String numberDDC, String language) {
-        super(title, author, genre, hardCover, yearPublished);
-        this.numberDDC = numberDDC;
+    public Novel(String title, String author, String subType, boolean hardCover, int yearPublished, String ddcLocation, String language) {
+        super(title, author, subType, hardCover, yearPublished, ddcLocation);
         this.language = language;
         setInternalID(11);
         setType(getClass().getSimpleName());
 
         LibraryDatabase.addNovel(this);
         LibraryDatabase.addInventory(this);
-    }
-
-    public String getNumberDDC() {
-        return numberDDC;
-    }
-
-    public void setNumberDDC(String numberDDC) {
-        this.numberDDC = numberDDC;
     }
 
     public String getLanguage() {
@@ -49,8 +39,7 @@ public class Novel extends Book {
     @Override
     public String toString() {
         return "Novel{" +
-                "numberDDC='" + numberDDC + '\'' +
-                ", language='" + language + '\'' +
+                "language='" + language + '\'' +
                 '}';
     }
 
@@ -58,8 +47,6 @@ public class Novel extends Book {
     public StringBuilder returnFinalInfo() {
         StringBuilder sb = new StringBuilder();
         sb.append(super.returnFinalInfo())
-                .append("DDC Number: ")
-                .append(getNumberDDC())
                 .append("\r\n")
                 .append("Language: ")
                 .append(getLanguage())
@@ -72,8 +59,6 @@ public class Novel extends Book {
     public StringBuilder returnRawInfo() {
         StringBuilder sb = new StringBuilder();
         sb.append(super.returnRawInfo())
-                .append(getNumberDDC())
-                .append("\r\n")
                 .append(getLanguage())
                 .append("\r\n");
 

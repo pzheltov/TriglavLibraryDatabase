@@ -19,8 +19,8 @@ public class ChildrensLiterature extends Book {
         setType(getClass().getSimpleName());
     }
 
-    public ChildrensLiterature(String title, String author, String genre, boolean hardCover, int yearPublished, boolean pictureBook, boolean fairytale) {
-        super(title, author, genre, hardCover, yearPublished);
+    public ChildrensLiterature(String title, String author, String subType, boolean hardCover, int yearPublished, String ddcLocation, boolean pictureBook, boolean fairytale) {
+        super(title, author, subType, hardCover, yearPublished, ddcLocation);
         this.pictureBook = pictureBook;
         this.fairytale = fairytale;
         setInternalID(15);
