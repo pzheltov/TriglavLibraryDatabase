@@ -2,24 +2,24 @@ package inventory.print.book;
 
 import inventory.LibraryDatabase;
 
-public class ChildrensLit extends Book {
+public class ChildrensLiterature extends Book {
     private boolean pictureBook;
     private boolean fairytale;
 
-    public ChildrensLit() {
+    public ChildrensLiterature() {
         this(false, false);
         setInternalID(15);
         setType(getClass().getSimpleName());
     }
 
-    public ChildrensLit(boolean pictureBook, boolean fairytale) {
+    public ChildrensLiterature(boolean pictureBook, boolean fairytale) {
         this.pictureBook = pictureBook;
         this.fairytale = fairytale;
         setInternalID(15);
         setType(getClass().getSimpleName());
     }
 
-    public ChildrensLit(String title, String author, String genre, boolean hardCover, int yearPublished, boolean pictureBook, boolean fairytale) {
+    public ChildrensLiterature(String title, String author, String genre, boolean hardCover, int yearPublished, boolean pictureBook, boolean fairytale) {
         super(title, author, genre, hardCover, yearPublished);
         this.pictureBook = pictureBook;
         this.fairytale = fairytale;
@@ -48,7 +48,7 @@ public class ChildrensLit extends Book {
 
     @Override
     public String toString() {
-        return "ChildrensLit{" +
+        return "ChildrensLiterature{" +
                 "pictureBook=" + pictureBook +
                 ", fairytale=" + fairytale +
                 '}';

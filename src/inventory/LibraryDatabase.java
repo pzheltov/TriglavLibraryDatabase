@@ -9,7 +9,7 @@ import inventory.multimedia.video.Documentary;
 import inventory.multimedia.video.Movie;
 import inventory.multimedia.video.Video;
 import inventory.print.book.Book;
-import inventory.print.book.ChildrensLit;
+import inventory.print.book.ChildrensLiterature;
 import inventory.print.book.Novel;
 import inventory.print.book.TouristGuide;
 import inventory.print.periodical.Comics;
@@ -40,7 +40,7 @@ public class LibraryDatabase {
     private static ArrayList<Documentary> documentaryList = new ArrayList<>();
     private static ArrayList<Magazine> magazineList = new ArrayList<>();
     private static ArrayList<Audiobook> audiobookList = new ArrayList<>();
-    private static ArrayList<ChildrensLit> childrenLitList = new ArrayList<>();
+    private static ArrayList<ChildrensLiterature> childrenLitList = new ArrayList<>();
     private static ArrayList<ArchiveFootage> archiveFootageList = new ArrayList<>();
     private static ArrayList<Comics> comicsList = new ArrayList<>();
     private static ArrayList<Podcast> podcastList = new ArrayList<>();
@@ -153,11 +153,11 @@ public class LibraryDatabase {
         LibraryDatabase.audiobookList = audiobookList;
     }
 
-    public static ArrayList<ChildrensLit> getChildrenLitList() {
+    public static ArrayList<ChildrensLiterature> getChildrenLitList() {
         return childrenLitList;
     }
 
-    public static void setChildrenLitList(ArrayList<ChildrensLit> childrenLitList) {
+    public static void setChildrenLitList(ArrayList<ChildrensLiterature> childrenLitList) {
         LibraryDatabase.childrenLitList = childrenLitList;
     }
 
@@ -237,8 +237,8 @@ public class LibraryDatabase {
         audiobookList.add(audiobook);
     }
 
-    public static void addChildrensBook(ChildrensLit childrensLit) {
-        childrenLitList.add(childrensLit);
+    public static void addChildrensBook(ChildrensLiterature childrensLiterature) {
+        childrenLitList.add(childrensLiterature);
     }
 
     public static void addArchiveFootage(ArchiveFootage archiveFootage) {
