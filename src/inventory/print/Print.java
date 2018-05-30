@@ -4,24 +4,24 @@ import inventory.Inventory;
 
 public class Print extends Inventory {
     private String author;
-    private String genre;
+    private String subType; // Previously called genre. Now it will hold more general sub-type which can be genre or anything else.
 
 
     public Print() {
-        this("Unknown author", "Unknown genre");
+        this("Unknown author", "Unknown subType");
         setInternalID(1);
         setType(getClass().getSimpleName());
     }
 
-    public Print(String author, String genre) {
+    public Print(String author, String subType) {
         this.author = author;
-        this.genre = genre;
+        this.subType = subType;
         setInternalID(1);
         setType(getClass().getSimpleName());
     }
 
-    public Print(String title, String author, String genre) {
-        this(author, genre);
+    public Print(String title, String author, String subType) {
+        this(author, subType);
         setTitle(title);
         setInternalID(1);
         setType(getClass().getSimpleName());
@@ -36,19 +36,19 @@ public class Print extends Inventory {
         this.author = author;
     }
 
-    public String getGenre() {
-        return genre;
+    public String getSubType() {
+        return subType;
     }
 
-    public void setGenre(String genre) {
-        this.genre = genre;
+    public void setSubType(String subType) {
+        this.subType = subType;
     }
 
     @Override
     public String toString() {
         return "Print{" +
                 "author='" + author + '\'' +
-                ", genre='" + genre + '\'' +
+                ", subType='" + subType + '\'' +
                 '}';
     }
 
@@ -65,7 +65,7 @@ public class Print extends Inventory {
                 .append(getAuthor())
                 .append("\r\n")
                 .append("Genre: ")
-                .append(getGenre())
+                .append(getSubType())
                 .append("\r\n");
 
         return sb;
@@ -80,7 +80,7 @@ public class Print extends Inventory {
                 .append("\r\n")
                 .append(getAuthor())
                 .append("\r\n")
-                .append(getGenre())
+                .append(getSubType())
                 .append("\r\n");
 
         return sb;
