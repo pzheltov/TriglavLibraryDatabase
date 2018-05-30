@@ -137,7 +137,7 @@ public class AddItemBox {
         layout.add(reject, 0, 12);
 
         // Set up the scene
-        scene = new Scene(layout, 530, 510);
+        scene = new Scene(layout, 550, 510);
 
         // Activate the primary stage
         primaryStage.setScene(scene);
@@ -262,7 +262,7 @@ public class AddItemBox {
         layout.add(reject, 0, 12);
 
         // Set up the scene
-        scene = new Scene(layout, 530, 510);
+        scene = new Scene(layout, 550, 510);
 
         // Activate the primary stage
         primaryStage.setScene(scene);
@@ -383,7 +383,7 @@ public class AddItemBox {
         layout.add(reject, 0, 12);
 
         // Set up the scene
-        scene = new Scene(layout, 530, 510);
+        scene = new Scene(layout, 550, 510);
 
         // Activate the primary stage
         primaryStage.setScene(scene);
@@ -491,7 +491,7 @@ public class AddItemBox {
         layout.add(reject, 0, 12);
 
         // Set up the scene
-        scene = new Scene(layout, 530, 440);
+        scene = new Scene(layout, 550, 440);
 
         // Activate the primary stage
         primaryStage.setScene(scene);
@@ -597,7 +597,7 @@ public class AddItemBox {
         layout.add(reject, 0, 12);
 
         // Set up the scene
-        scene = new Scene(layout, 530, 440);
+        scene = new Scene(layout, 550, 440);
 
         // Activate the primary stage
         primaryStage.setScene(scene);
@@ -702,7 +702,7 @@ public class AddItemBox {
         layout.add(reject, 0, 12);
 
         // Set up the scene
-        scene = new Scene(layout, 530, 440);
+        scene = new Scene(layout, 550, 440);
 
         // Activate the primary stage
         primaryStage.setScene(scene);
@@ -833,7 +833,7 @@ public class AddItemBox {
         layout.add(reject, 0, 12);
 
         // Set up the scene
-        scene = new Scene(layout, 530, 510);
+        scene = new Scene(layout, 550, 510);
 
         // Activate the primary stage
         primaryStage.setScene(scene);
@@ -929,7 +929,7 @@ public class AddItemBox {
         layout.add(reject, 0, 12);
 
         // Set up the scene
-        scene = new Scene(layout, 530, 440);
+        scene = new Scene(layout, 550, 440);
 
         // Activate the primary stage
         primaryStage.setScene(scene);
@@ -964,7 +964,7 @@ public class AddItemBox {
 
         // Set title
         TextField titleInput = new TextField();
-        titleInput.setPromptText("FIS 2008 Seminar");
+        titleInput.setPromptText("Bojack Horseman");
         Label titleLabel = new Label("Title: ");
 
         // Choice box for availability
@@ -974,44 +974,31 @@ public class AddItemBox {
         availableInput.setMinWidth(190);
         Label availableLabel = new Label("Status: ");
 
-        // Adding fields for Print class
+        // Adding fields for Multimedia class
 
         // Text field for author
-        TextField authorInput = new TextField();
-        authorInput.setPromptText("Dusan Fortuna");
-        Label authorLabel = new Label("Author: ");
+        TextField publisherInput = new TextField();
+        publisherInput.setPromptText("Netflix");
+        Label publisherLabel = new Label("Publisher: ");
 
         // Input sub type (previously called genre)
-        ChoiceBox<String> subTypeInput = new ChoiceBox<>();
-        subTypeInput.getItems().addAll("Vlog", "Culture", "Interview", "Webinar", "Event", "Tutorial", "Product Review");
-        subTypeInput.setValue("Fiction");
-        subTypeInput.setMinWidth(190);
-        Label subTypeLabel = new Label("Type: ");
+        ChoiceBox<String> subDefInput = new ChoiceBox<>();
+        subDefInput.getItems().addAll("Vlog", "Culture", "Interview", "Webinar", "Event", "Tutorial", "Product Review");
+        subDefInput.setValue("Vlog");
+        subDefInput.setMinWidth(190);
+        Label subDefLabel = new Label("Type: ");
 
-        // Adding fields specific for a book
-
-        // Checkbox for hard-cover
-        CheckBox hardCoverInput = new CheckBox();
-        Label hardcoverLabel = new Label("Hard-cover: ");
+        // Adding Video class fields
 
         // Text field for year published
-        TextField yearInput = new TextField();
-        yearInput.setPromptText("2010");
-        Label yearLabel = new Label("Year published: ");
+        TextField directorInput = new TextField();
+        directorInput.setPromptText("Raphael Bob-Waksberg");
+        Label directorLabel = new Label("Director: ");
 
-        // Text field for entering DDC
-        TextField ddcInput = new TextField();
-        ddcInput.setPromptText("SF831.54");
-        Label ddcLabel = new Label("Dewey Decimal System Location: ");
-
-        // Adding fields specific for a novel
-
-        // Choice box for language selection
-        ChoiceBox<String> languageInput = new ChoiceBox<>();
-        languageInput.getItems().addAll("English", "French", "German", "Italian", "Slovenian");
-        languageInput.setValue("Slovenian");
-        languageInput.setMinWidth(190);
-        Label languageLabel = new Label("Language: ");
+        // Text field for year published
+        TextField screenWriterInput = new TextField();
+        screenWriterInput.setPromptText("Sarah Lynn");
+        Label screenWriterLabel = new Label("Screenwriter: ");
 
         // Setting up the Grid Pane
         layout = new GridPane();
@@ -1025,29 +1012,26 @@ public class AddItemBox {
         layout.add(instructionsLabel, 0, 0);
         layout.add(titleLabel, 0, 1);
         layout.add(titleInput, 0, 2);
-        layout.add(authorLabel, 0, 3);
-        layout.add(authorInput, 0, 4);
-        layout.add(yearLabel, 0, 5);
-        layout.add(yearInput, 0, 6);
-        layout.add(ddcLabel, 0, 7);
-        layout.add(ddcInput, 0, 8);
+        layout.add(directorLabel, 0, 3);
+        layout.add(directorInput, 0, 4);
+        layout.add(subDefLabel, 0, 5);
+        layout.add(subDefInput, 0, 6);
 
         //Second column
-        layout.add(languageLabel, 1, 1);
-        layout.add(languageInput, 1, 2);
-        layout.add(subTypeLabel, 1, 3);
-        layout.add(subTypeInput, 1, 4);
+        layout.add(publisherLabel, 1, 1);
+        layout.add(publisherInput, 1, 2);
+        layout.add(screenWriterLabel, 1, 3);
+        layout.add(screenWriterInput, 1, 4);
         layout.add(availableLabel, 1, 5);
         layout.add(availableInput, 1, 6);
-        layout.add(hardcoverLabel, 1, 7);
-        layout.add(hardCoverInput, 1, 8);
+
 
         // Buttons
         layout.add(accept, 0, 11);
         layout.add(reject, 0, 12);
 
         // Set up the scene
-        scene = new Scene(layout, 530, 510);
+        scene = new Scene(layout, 550, 430);
 
         // Activate the primary stage
         primaryStage.setScene(scene);
