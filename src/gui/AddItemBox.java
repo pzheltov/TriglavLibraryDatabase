@@ -47,10 +47,10 @@ public class AddItemBox {
         accept.setOnAction(event -> System.out.println("Not set up yet"));
         reject.setOnAction(event -> primaryStage.close());
 
-        // Adding fields standard for all items - variables from inventory
-
         // Instructions
         Label instructionsLabel = new Label("Add a new novel: ");
+
+        // Adding fields for abstract Inventory class
 
         // Set title
         TextField titleInput = new TextField();
@@ -64,19 +64,19 @@ public class AddItemBox {
         availableInput.setMinWidth(190);
         Label availableLabel = new Label("Status: ");
 
-        // Adding fields standard for all print
+        // Adding fields for Print class
 
         // Text field for author
         TextField authorInput = new TextField();
         authorInput.setPromptText("Gabriel Garcia Marquez");
         Label authorLabel = new Label("Author: ");
 
-        // Input genre
-        ChoiceBox<String> genreInput = new ChoiceBox<>();
-        genreInput.getItems().addAll("Fiction", "Thriller", "Tragedy", "Western", "Science Fiction", "Romance");
-        genreInput.setValue("Fiction");
-        genreInput.setMinWidth(190);
-        Label genreLabel = new Label("Genre: ");
+        // Input sub type (previously called genre)
+        ChoiceBox<String> subTypeInput = new ChoiceBox<>();
+        subTypeInput.getItems().addAll("Fiction", "Thriller", "Tragedy", "Western", "Science Fiction", "Romance");
+        subTypeInput.setValue("Fiction");
+        subTypeInput.setMinWidth(190);
+        Label subTypeLabel = new Label("Genre: ");
 
         // Adding fields specific for a book
 
@@ -89,13 +89,12 @@ public class AddItemBox {
         yearInput.setPromptText("2010");
         Label yearLabel = new Label("Year published: ");
 
-
-        // Adding fields specific for a novel
-
         // Text field for entering DDC
         TextField ddcInput = new TextField();
         ddcInput.setPromptText("SF831.54");
         Label ddcLabel = new Label("Dewey Decimal System Location: ");
+
+        // Adding fields specific for a novel
 
         // Choice box for language selection
         ChoiceBox<String> languageInput = new ChoiceBox<>();
@@ -103,9 +102,6 @@ public class AddItemBox {
         languageInput.setValue("Slovenian");
         languageInput.setMinWidth(190);
         Label languageLabel = new Label("Language: ");
-
-        // DELETE
-        System.out.println(ddcInput.getWidth());
 
         // Setting up the Grid Pane
         layout = new GridPane();
@@ -129,8 +125,8 @@ public class AddItemBox {
         //Second column
         layout.add(languageLabel, 1, 1);
         layout.add(languageInput, 1, 2);
-        layout.add(genreLabel, 1, 3);
-        layout.add(genreInput, 1, 4);
+        layout.add(subTypeLabel, 1, 3);
+        layout.add(subTypeInput, 1, 4);
         layout.add(availableLabel, 1, 5);
         layout.add(availableInput, 1, 6);
         layout.add(hardcoverLabel, 1, 7);
@@ -143,7 +139,7 @@ public class AddItemBox {
         // Set up the scene
         scene = new Scene(layout, 530, 510);
 
-        // Set up the primary stage
+        // Activate the primary stage
         primaryStage.setScene(scene);
         primaryStage.showAndWait();
 
