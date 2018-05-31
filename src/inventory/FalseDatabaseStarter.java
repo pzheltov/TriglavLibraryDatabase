@@ -19,6 +19,10 @@ public class FalseDatabaseStarter {
     public static void startDatabase() {
 
         Movie m1 = new Movie("Full Metal Jacket", "Tristar Colombia", "War Film", "Stanley Kubrick", "Not Stanley", 7.7, true);
+        Movie m2 = new Movie("Full Metal Jacket", "Tristar Colombia", "War Film", "Stanley Kubrick", "Not Stanley", 7.7, true);
+        Movie m3 = new Movie("Full Metal Jacket", "Tristar Colombia", "War Film", "Stanley Kubrick", "Not Stanley", 7.7, true);
+        Movie m4 = new Movie("Full Metal Jacket", "Tristar Colombia", "War Film", "Stanley Kubrick", "Not Stanley", 7.7, true);
+
         Novel n1 = new Novel("Things Fall Apart", "Chinua Achebe", "Fiction", true, 1995, "DC.51C3", "English");
         Podcast p1 = new Podcast("Escape Pod", "Daikaiju", "Science Fiction", "MP3", false, false);
     }
