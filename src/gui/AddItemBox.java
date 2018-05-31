@@ -491,7 +491,7 @@ public class AddItemBox {
         layout.add(reject, 0, 12);
 
         // Set up the scene
-        scene = new Scene(layout, 550, 440);
+        scene = new Scene(layout, 550, 510);
 
         // Activate the primary stage
         primaryStage.setScene(scene);
@@ -597,7 +597,7 @@ public class AddItemBox {
         layout.add(reject, 0, 12);
 
         // Set up the scene
-        scene = new Scene(layout, 550, 440);
+        scene = new Scene(layout, 550, 510);
 
         // Activate the primary stage
         primaryStage.setScene(scene);
@@ -702,7 +702,7 @@ public class AddItemBox {
         layout.add(reject, 0, 12);
 
         // Set up the scene
-        scene = new Scene(layout, 550, 440);
+        scene = new Scene(layout, 550, 510);
 
         // Activate the primary stage
         primaryStage.setScene(scene);
@@ -749,12 +749,12 @@ public class AddItemBox {
 
         // Adding fields for Multimedia class
 
-        // Text field for author
+        // Text field for publisher
         TextField publisherInput = new TextField();
         publisherInput.setPromptText("Cristaldi Film");
         Label publisherLabel = new Label("Publisher: ");
 
-        // Input sub type (previously called genre)
+        // Input sub definition
         ChoiceBox<String> subDefInput = new ChoiceBox<>();
         subDefInput.getItems().addAll("Action", "Adventure", "Horror", "Crime",
                 "Science Fiction", "Epic", "Comedy");
@@ -783,7 +783,7 @@ public class AddItemBox {
 
         // Input whether movie is a Hollywood production
         CheckBox hollywoodInput = new CheckBox();
-        Label hollywoodLabel = new Label();
+        Label hollywoodLabel = new Label("Hollywood production: ");
 
         // Setting up the Grid Pane
         layout = new GridPane();
@@ -809,6 +809,8 @@ public class AddItemBox {
         layout.add(ratingInput, 1, 4);
         layout.add(availableLabel, 1, 5);
         layout.add(availableInput, 1, 6);
+        layout.add(hollywoodLabel, 1, 7);
+        layout.add(hollywoodInput, 1, 8);
 
 
         // Buttons
@@ -816,7 +818,7 @@ public class AddItemBox {
         layout.add(reject, 0, 12);
 
         // Set up the scene
-        scene = new Scene(layout, 550, 430);
+        scene = new Scene(layout, 550, 510);
 
         // Activate the primary stage
         primaryStage.setScene(scene);
@@ -1040,7 +1042,7 @@ public class AddItemBox {
         layout.add(reject, 0, 12);
 
         // Set up the scene
-        scene = new Scene(layout, 550, 440);
+        scene = new Scene(layout, 550, 510);
 
         // Activate the primary stage
         primaryStage.setScene(scene);
@@ -1142,7 +1144,7 @@ public class AddItemBox {
         layout.add(reject, 0, 12);
 
         // Set up the scene
-        scene = new Scene(layout, 550, 430);
+        scene = new Scene(layout, 550, 510);
 
         // Activate the primary stage
         primaryStage.setScene(scene);
