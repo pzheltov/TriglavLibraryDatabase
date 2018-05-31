@@ -828,6 +828,115 @@ public class AddItemBox {
 
     static void addDocumentary() {
 
+        // Set the stage
+        primaryStage = new Stage();
+        primaryStage.setTitle("Documentary");
+        primaryStage.initModality(Modality.APPLICATION_MODAL);
+
+        // Initiate Accept button
+        accept = new Button("Save");
+        accept.setMinSize(90, 30);
+        accept.setMaxSize(30, 10);
+
+        // Initiate Reject button
+        reject = new Button("Cancel");
+        reject.setMinSize(90, 30);
+        reject.setMaxSize(30, 10);
+
+        // Setting up button actions
+        accept.setOnAction(event -> System.out.println("Not set up yet"));
+        reject.setOnAction(event -> primaryStage.close());
+
+        // Instructions
+        Label instructionsLabel = new Label("Add a new documentary: ");
+
+        // Adding fields for abstract Inventory class
+
+        // Set title
+        TextField titleInput = new TextField();
+        titleInput.setPromptText("Planet Earth");
+        Label titleLabel = new Label("Title: ");
+
+        // Choice box for availability
+        ChoiceBox<String> availableInput = new ChoiceBox<>();
+        availableInput.getItems().addAll("Available", "Reserved", "Unavailable");
+        availableInput.setValue("Available");
+        availableInput.setMinWidth(190);
+        Label availableLabel = new Label("Status: ");
+
+        // Adding fields for Multimedia class
+
+        // Text field for author
+        TextField publisherInput = new TextField();
+        publisherInput.setPromptText("BBC");
+        Label publisherLabel = new Label("Publisher: ");
+
+        // Input sub definition
+        ChoiceBox<String> subDefInput = new ChoiceBox<>();
+        subDefInput.getItems().addAll("History", "Science", "Nature", "Space", "Culture");
+        subDefInput.setValue("History");
+        subDefInput.setMinWidth(190);
+        Label subDefLabel = new Label("Type: ");
+
+        // Adding Video class fields
+
+        // Text field for year published
+        TextField directorInput = new TextField();
+        directorInput.setPromptText("Justin Englishman");
+        Label directorLabel = new Label("Director: ");
+
+        // Text field for year published
+        TextField screenWriterInput = new TextField();
+        screenWriterInput.setPromptText("Todd Smith");
+        Label screenWriterLabel = new Label("Screenwriter: ");
+
+        // Documentary class variables
+
+        // Set up option for adding color
+        ChoiceBox<String> colorInput = new ChoiceBox<>();
+        colorInput.getItems().addAll("Black & White", "Multicolor");
+        colorInput.setValue("Multicolor");
+        colorInput.setMinWidth(190);
+        Label colorLabel = new Label("Documentary color: ");
+
+        // Setting up the Grid Pane
+        layout = new GridPane();
+        layout.setPadding(new Insets(20, 45, 45, 45));
+        layout.setHgap(70);
+        layout.setVgap(15);
+
+        // Adding Items to the Grid Pane
+
+        // First column
+        layout.add(instructionsLabel, 0, 0);
+        layout.add(titleLabel, 0, 1);
+        layout.add(titleInput, 0, 2);
+        layout.add(directorLabel, 0, 3);
+        layout.add(directorInput, 0, 4);
+        layout.add(subDefLabel, 0, 5);
+        layout.add(subDefInput, 0, 6);
+
+        //Second column
+        layout.add(publisherLabel, 1, 1);
+        layout.add(publisherInput, 1, 2);
+        layout.add(screenWriterLabel, 1, 3);
+        layout.add(screenWriterInput, 1, 4);
+        layout.add(colorLabel, 1, 5);
+        layout.add(colorInput, 1, 6);
+        layout.add(availableLabel, 1, 7);
+        layout.add(availableInput, 1, 8);
+
+        // Buttons
+        layout.add(accept, 0, 11);
+        layout.add(reject, 0, 12);
+
+        // Set up the scene
+        scene = new Scene(layout, 550, 510);
+
+        // Activate the primary stage
+        primaryStage.setScene(scene);
+        primaryStage.showAndWait();
+
     }
 
     static void addArchiveFootage() {
