@@ -1217,8 +1217,8 @@ public class AddItemBox {
 
         // Input sub type (previously called genre)
         ChoiceBox<String> subDefInput = new ChoiceBox<>();
-        subDefInput.getItems().addAll("Novel", "Short Story", "World Classic");
-        subDefInput.setValue("Novel");
+        subDefInput.getItems().addAll("Horror", "Romance", "Action", "Mystery", "Comedy");
+        subDefInput.setValue("Mystery");
         subDefInput.setMinWidth(190);
         Label subDefLabel = new Label("Type: ");
 
@@ -1238,7 +1238,7 @@ public class AddItemBox {
 
         // Text field for narrator
         TextField narratorInput = new TextField();
-        narratorInput.setPromptText("27.15");
+        narratorInput.setPromptText("Stephen Fry");
         Label narratorLabel = new Label("Narrator: ");
 
         // Setting up the Grid Pane
@@ -1328,8 +1328,8 @@ public class AddItemBox {
 
         // Input sub type (previously called genre)
         ChoiceBox<String> subDefInput = new ChoiceBox<>();
-        subDefInput.getItems().addAll("Improv", "News", "Society", "Story", "Interview", "Talk Show");
-        subDefInput.setValue("Ambient Noise");
+        subDefInput.getItems().addAll("Improv", "News", "Society", "Blogging", "Interview", "Talk Show", "Radio Drama");
+        subDefInput.setValue("Talk Show");
         subDefInput.setMinWidth(190);
         Label subDefLabel = new Label("Type: ");
 
