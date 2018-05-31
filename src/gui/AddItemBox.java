@@ -941,6 +941,122 @@ public class AddItemBox {
 
     static void addArchiveFootage() {
 
+        // Set the stage
+        primaryStage = new Stage();
+        primaryStage.setTitle("Archive Footage");
+        primaryStage.initModality(Modality.APPLICATION_MODAL);
+
+        // Initiate Accept button
+        accept = new Button("Save");
+        accept.setMinSize(90, 30);
+        accept.setMaxSize(30, 10);
+
+        // Initiate Reject button
+        reject = new Button("Cancel");
+        reject.setMinSize(90, 30);
+        reject.setMaxSize(30, 10);
+
+        // Setting up button actions
+        accept.setOnAction(event -> System.out.println("Not set up yet"));
+        reject.setOnAction(event -> primaryStage.close());
+
+        // Instructions
+        Label instructionsLabel = new Label("Add a new video: ");
+
+        // Adding fields for abstract Inventory class
+
+        // Set title
+        TextField titleInput = new TextField();
+        titleInput.setPromptText("Dolenjska 1951 - 1967");
+        Label titleLabel = new Label("Title: ");
+
+        // Choice box for availability
+        ChoiceBox<String> availableInput = new ChoiceBox<>();
+        availableInput.getItems().addAll("Available", "Reserved", "Unavailable");
+        availableInput.setValue("Available");
+        availableInput.setMinWidth(190);
+        Label availableLabel = new Label("Status: ");
+
+        // Adding fields for Multimedia class
+
+        // Text field for author
+        TextField publisherInput = new TextField();
+        publisherInput.setPromptText("Yugofilm");
+        Label publisherLabel = new Label("Publisher: ");
+
+        // Input sub type (previously called genre)
+        ChoiceBox<String> subDefInput = new ChoiceBox<>();
+        subDefInput.getItems().addAll("Primary Source", "Secondary Source", "Recreated Event");
+        subDefInput.setValue("Primary Source");
+        subDefInput.setMinWidth(190);
+        Label subDefLabel = new Label("Historical significance: ");
+
+        // Adding Video class fields
+
+        // Text field for director
+        TextField directorInput = new TextField();
+        directorInput.setPromptText("Miroslav Sturmberger");
+        Label directorLabel = new Label("Director: ");
+
+        // Text field for year published
+        TextField screenWriterInput = new TextField();
+        screenWriterInput.setPromptText("Petar Zupancic");
+        Label screenWriterLabel = new Label("Screenwriter: ");
+
+        // Adding variables specific to Archive Footage class
+
+        // What region the footage originates from
+        ChoiceBox<String> regionInput = new ChoiceBox<>();
+        regionInput.getItems().addAll("Footage related to Novo mesto", "Slovenian Archive");
+        regionInput.setValue("Slovenian Archive");
+        regionInput.setMinWidth(190);
+        Label regionLabel = new Label("Footage content: ");
+
+        // Check box for propaganda material
+        CheckBox propagandaInput = new CheckBox();
+        Label propagandaLabel = new Label("Propaganda material: ");
+
+        // Setting up the Grid Pane
+        layout = new GridPane();
+        layout.setPadding(new Insets(20, 45, 45, 45));
+        layout.setHgap(70);
+        layout.setVgap(15);
+
+        // Adding Items to the Grid Pane
+
+        // First column
+        layout.add(instructionsLabel, 0, 0);
+        layout.add(titleLabel, 0, 1);
+        layout.add(titleInput, 0, 2);
+        layout.add(directorLabel, 0, 3);
+        layout.add(directorInput, 0, 4);
+        layout.add(subDefLabel, 0, 5);
+        layout.add(subDefInput, 0, 6);
+        layout.add(regionLabel, 0, 7);
+        layout.add(regionInput, 0, 8);
+
+        //Second column
+        layout.add(publisherLabel, 1, 1);
+        layout.add(publisherInput, 1, 2);
+        layout.add(screenWriterLabel, 1, 3);
+        layout.add(screenWriterInput, 1, 4);
+        layout.add(availableLabel, 1, 5);
+        layout.add(availableInput, 1, 6);
+        layout.add(propagandaLabel, 1, 7);
+        layout.add(propagandaInput, 1, 8);
+
+
+        // Buttons
+        layout.add(accept, 0, 11);
+        layout.add(reject, 0, 12);
+
+        // Set up the scene
+        scene = new Scene(layout, 550, 510);
+
+        // Activate the primary stage
+        primaryStage.setScene(scene);
+        primaryStage.showAndWait();
+
     }
 
     static void addMusic() {
