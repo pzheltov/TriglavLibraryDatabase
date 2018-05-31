@@ -1,4 +1,6 @@
 /*
+MASTER
+
 Triglav Library Database has two main classes.
 
 >> For interacting with the program through JavaFX GUI, this is the main class.
