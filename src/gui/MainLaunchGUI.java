@@ -74,8 +74,8 @@ public class MainLaunchGUI extends Application {
 
 
             // VBox for holding button controls
-            VBox controls = new VBox(10);
-            controls.setPadding(new Insets(20));
+            VBox controls = new VBox(15);
+            controls.setPadding(new Insets(10));
             controls.getChildren().addAll(overview, addItem, importLibrary, exportLibrary, about, exit);
 
             // Control button commands
@@ -117,6 +117,7 @@ public class MainLaunchGUI extends Application {
 
             // Main window will be made out of BorderPane
             BorderPane mainLayout = new BorderPane();
+            mainLayout.setPadding(new Insets(10));
             mainLayout.setLeft(controls);
             mainLayout.setCenter(table);
 

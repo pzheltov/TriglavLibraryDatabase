@@ -10,8 +10,7 @@ THIS CLASS WILL BE DELETED AFTER TESTING IS DONE.
 package gui;
 
 import inventory.FalseDatabaseStarter;
-import inventory.Inventory;
-import inventory.LibraryDatabase;
+import inventory.multimedia.video.Movie;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -25,7 +24,7 @@ import javafx.stage.Stage;
 
 public class MainClass extends Application {
     Stage window;
-    TableView<Inventory> table;
+    TableView<Movie> table;
 
     public static void main(String[] args) {
         FalseDatabaseStarter.startDatabase();
@@ -35,24 +34,24 @@ public class MainClass extends Application {
         @Override
     public void start(Stage primaryStage) throws Exception {
         window = primaryStage;
-        window.setTitle("thenewboston - JavaFX");
+        window.setTitle("Table Tester");
 
         //Title column
-        TableColumn<Inventory, String> titleColumn = new TableColumn<>("Title");
+        TableColumn<Movie, String> titleColumn = new TableColumn<>("Title");
         titleColumn.setMinWidth(200);
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
 
         //Type column
-        TableColumn<Inventory, String> typeColumn = new TableColumn<>("Type");
+        TableColumn<Movie, String> typeColumn = new TableColumn<>("Type");
         typeColumn.setMinWidth(100);
         typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
 
         //Status column
-        TableColumn<Inventory, String> statusColumn = new TableColumn<>("Status");
+        TableColumn<Movie, String> statusColumn = new TableColumn<>("Status");
         statusColumn.setMinWidth(100);
         statusColumn.setCellValueFactory(new PropertyValueFactory<>("availability"));
 
-        table = new TableView<Inventory>();
+        table = new TableView<Movie>();
         table.setItems(getInventory());
         table.getColumns().addAll(titleColumn, typeColumn, statusColumn);
 
@@ -65,12 +64,11 @@ public class MainClass extends Application {
     }
 
     //Get all of the inventory
-    public ObservableList<Inventory> getInventory() {
-        ObservableList<Inventory> inventory = FXCollections.observableArrayList();
+    public ObservableList<Movie> getInventory() {
+        ObservableList<Movie> inventory = FXCollections.observableArrayList();
 
-        for (int i = 0; i < LibraryDatabase.getInventoryList().size(); i++) {
-            inventory.add(LibraryDatabase.getInventoryList().get(i));
-        }
+            inventory.add(new Movie("Trouble in HK", "HK Production", "Action", "Bruce Lee", "Jackie Chan", 8.0, false));
+
         
         return inventory;
     }
