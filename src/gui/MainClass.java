@@ -9,6 +9,7 @@ THIS CLASS WILL BE DELETED AFTER TESTING IS DONE.
  */
 package gui;
 
+import inventory.FalseDatabaseStarter;
 import inventory.Inventory;
 import inventory.LibraryDatabase;
 import javafx.application.Application;
@@ -24,10 +25,10 @@ import javafx.stage.Stage;
 
 public class MainClass extends Application {
     Stage window;
-    TableView<Product> table;
+    TableView<Inventory> table;
 
     public static void main(String[] args) {
-
+        FalseDatabaseStarter.startDatabase();
         launch(args);
     }
 
@@ -37,22 +38,22 @@ public class MainClass extends Application {
         window.setTitle("thenewboston - JavaFX");
 
         //Name column
-        TableColumn<Product, String> nameColumn = new TableColumn<>("Name");
+        TableColumn<Inventory, String> nameColumn = new TableColumn<>("Title");
         nameColumn.setMinWidth(200);
-        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
 
         //Price column
-        TableColumn<Product, Double> priceColumn = new TableColumn<>("Price");
+        TableColumn<Inventory, String> priceColumn = new TableColumn<>("Type");
         priceColumn.setMinWidth(100);
-        priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
+        priceColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
 
         //Quantity column
-        TableColumn<Product, String> quantityColumn = new TableColumn<>("Quantity");
+        TableColumn<Inventory, String> quantityColumn = new TableColumn<>("Status");
         quantityColumn.setMinWidth(100);
-        quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        quantityColumn.setCellValueFactory(new PropertyValueFactory<>("availability"));
 
-        table = new TableView<>();
-        table.setItems(getProduct());
+        table = new TableView<Inventory>();
+        table.setItems(getInventory());
         table.getColumns().addAll(nameColumn, priceColumn, quantityColumn);
 
         VBox vBox = new VBox();
@@ -64,7 +65,7 @@ public class MainClass extends Application {
     }
 
     //Get all of the products
-    public ObservableList<Inventory> getProduct() {
+    public ObservableList<Inventory> getInventory() {
         ObservableList<Inventory> inventory = FXCollections.observableArrayList();
 
         for (int i = 0; i < LibraryDatabase.getInventoryList().size(); i++) {
