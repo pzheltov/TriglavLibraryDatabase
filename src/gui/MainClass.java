@@ -37,24 +37,24 @@ public class MainClass extends Application {
         window = primaryStage;
         window.setTitle("thenewboston - JavaFX");
 
-        //Name column
-        TableColumn<Inventory, String> nameColumn = new TableColumn<>("Title");
-        nameColumn.setMinWidth(200);
-        nameColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
+        //Title column
+        TableColumn<Inventory, String> titleColumn = new TableColumn<>("Title");
+        titleColumn.setMinWidth(200);
+        titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
 
-        //Price column
-        TableColumn<Inventory, String> priceColumn = new TableColumn<>("Type");
-        priceColumn.setMinWidth(100);
-        priceColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
+        //Type column
+        TableColumn<Inventory, String> typeColumn = new TableColumn<>("Type");
+        typeColumn.setMinWidth(100);
+        typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
 
-        //Quantity column
-        TableColumn<Inventory, String> quantityColumn = new TableColumn<>("Status");
-        quantityColumn.setMinWidth(100);
-        quantityColumn.setCellValueFactory(new PropertyValueFactory<>("availability"));
+        //Status column
+        TableColumn<Inventory, String> statusColumn = new TableColumn<>("Status");
+        statusColumn.setMinWidth(100);
+        statusColumn.setCellValueFactory(new PropertyValueFactory<>("availability"));
 
         table = new TableView<Inventory>();
         table.setItems(getInventory());
-        table.getColumns().addAll(nameColumn, priceColumn, quantityColumn);
+        table.getColumns().addAll(titleColumn, typeColumn, statusColumn);
 
         VBox vBox = new VBox();
         vBox.getChildren().addAll(table);
@@ -64,7 +64,7 @@ public class MainClass extends Application {
         window.show();
     }
 
-    //Get all of the products
+    //Get all of the inventory
     public ObservableList<Inventory> getInventory() {
         ObservableList<Inventory> inventory = FXCollections.observableArrayList();
 
@@ -73,8 +73,6 @@ public class MainClass extends Application {
         }
         
         return inventory;
-
-        
     }
 
 
