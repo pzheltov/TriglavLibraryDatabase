@@ -20,8 +20,8 @@ public class Audiobook extends Audio {
         setType(getClass().getSimpleName());
     }
 
-    public Audiobook(String title, String publisher, String format, double length, String narrator) {
-        super(title, publisher, format);
+    public Audiobook(String title, String publisher, String subDefine, String format, double length, String narrator) {
+        super(title, publisher, subDefine, format);
         this.length = length;
         this.narrator = narrator;
 

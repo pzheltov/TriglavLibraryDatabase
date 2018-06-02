@@ -1,6 +1,10 @@
 /*
-The name is somewhat misleading.
-Windows that do not belong directly in the main menu MainGUI are placed and called from here.
+SLAVE
+
+MainLaunchGUI calls all additional windows from here.
+
+It would be ideal for this class not to call any further FX classes, that all calling commands are done from the main class.
+This is not a priority for now, however.
  */
 
 package gui;
@@ -13,12 +17,11 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class AlertBox {
+class AlertBox {
 
     // For retrieving exit options.
     private static boolean answer;
@@ -32,8 +35,6 @@ public class AlertBox {
     private static Label messageLabel;
 
     // Layouts to be used
-    // See if necessary
-//    private static StackPane stackBox;
     private static HBox hBox;
     private static VBox vBox;
 
@@ -119,7 +120,7 @@ public class AlertBox {
 
         // Button actions
         // Confirming gets value from selectionChoice drop box and sends it to supportBox for evaluation. supportBox evaluates, calls AddItemBox class
-        accept.setOnAction(event -> SupportBox.ItemSelect(selectionChoice.getValue()));
+        accept.setOnAction(event -> PeripheralBox.ItemSelect(selectionChoice.getValue()));
         reject.setOnAction(event -> primaryStage.close());
 
         // Layout design
@@ -216,7 +217,7 @@ public class AlertBox {
 
     }
 
-    static boolean confirmExit(String title, String message) throws Exception {
+    static boolean confirmExit(String title, String message) {
 
         // Initiate primary stage
         primaryStage = new Stage();

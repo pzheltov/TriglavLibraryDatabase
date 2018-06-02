@@ -1,10 +1,9 @@
 package inventory.multimedia.audio;
 
 import inventory.LibraryDatabase;
-import inventory.LibraryIO;
 import inventory.multimedia.Multimedia;
 
-public class Audio extends Multimedia implements LibraryIO {
+public class Audio extends Multimedia {
     private String format;
 
     public Audio() {
@@ -19,8 +18,8 @@ public class Audio extends Multimedia implements LibraryIO {
         setType(getClass().getSimpleName());
     }
 
-    public Audio(String title, String publisher, String format) {
-        super(title, publisher);
+    public Audio(String title, String publisher, String subDefine, String format) {
+        super(title, publisher, subDefine);
         this.format = format;
         setInternalID(6);
         setType(getClass().getSimpleName());

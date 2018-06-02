@@ -1,3 +1,9 @@
+/*
+>> Every object that is created with the most encompassing constructor is automatically added to an ArrayList here
+>> This class contains only static ArrayLists which essentially serve as a database of all objects.
+>> This is my solution for keeping track of objects without utilizing overly complicated methods(), as proposed at FIS.
+ */
+
 package inventory;
 
 import inventory.multimedia.audio.Audio;
@@ -9,7 +15,7 @@ import inventory.multimedia.video.Documentary;
 import inventory.multimedia.video.Movie;
 import inventory.multimedia.video.Video;
 import inventory.print.book.Book;
-import inventory.print.book.ChildrensBook;
+import inventory.print.book.ChildrensLiterature;
 import inventory.print.book.Novel;
 import inventory.print.book.TouristGuide;
 import inventory.print.periodical.Comics;
@@ -22,9 +28,8 @@ import java.util.ArrayList;
 public class LibraryDatabase {
 
     /*
-    >> Classes Print and Multimedia have not been included in this list.
-    >> Class information is too abstract for this program
-    >> Inventory class is already available to display all information.
+    >> Classes Print and Multimedia have not been included in this list, and these will probably never be added
+    >> Setters will probably be deleted, as they serve no concievable purpose.
      */
 
     private static ArrayList<Inventory> inventoryList = new ArrayList<>();
@@ -40,7 +45,7 @@ public class LibraryDatabase {
     private static ArrayList<Documentary> documentaryList = new ArrayList<>();
     private static ArrayList<Magazine> magazineList = new ArrayList<>();
     private static ArrayList<Audiobook> audiobookList = new ArrayList<>();
-    private static ArrayList<ChildrensBook> childrenBookList = new ArrayList<>();
+    private static ArrayList<ChildrensLiterature> childrenLitList = new ArrayList<>();
     private static ArrayList<ArchiveFootage> archiveFootageList = new ArrayList<>();
     private static ArrayList<Comics> comicsList = new ArrayList<>();
     private static ArrayList<Podcast> podcastList = new ArrayList<>();
@@ -153,12 +158,12 @@ public class LibraryDatabase {
         LibraryDatabase.audiobookList = audiobookList;
     }
 
-    public static ArrayList<ChildrensBook> getChildrenBookList() {
-        return childrenBookList;
+    public static ArrayList<ChildrensLiterature> getChildrenLitList() {
+        return childrenLitList;
     }
 
-    public static void setChildrenBookList(ArrayList<ChildrensBook> childrenBookList) {
-        LibraryDatabase.childrenBookList = childrenBookList;
+    public static void setChildrenLitList(ArrayList<ChildrensLiterature> childrenLitList) {
+        LibraryDatabase.childrenLitList = childrenLitList;
     }
 
     public static ArrayList<ArchiveFootage> getArchiveFootageList() {
@@ -237,8 +242,8 @@ public class LibraryDatabase {
         audiobookList.add(audiobook);
     }
 
-    public static void addChildrensBook(ChildrensBook childrensBook) {
-        childrenBookList.add(childrensBook);
+    public static void addChildrensBook(ChildrensLiterature childrensLiterature) {
+        childrenLitList.add(childrensLiterature);
     }
 
     public static void addArchiveFootage(ArchiveFootage archiveFootage) {

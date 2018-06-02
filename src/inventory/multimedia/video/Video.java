@@ -1,10 +1,9 @@
 package inventory.multimedia.video;
 
 import inventory.LibraryDatabase;
-import inventory.LibraryIO;
 import inventory.multimedia.Multimedia;
 
-public class Video extends Multimedia implements LibraryIO {
+public class Video extends Multimedia {
     private String director;
     private String screenwriter;
 
@@ -21,8 +20,8 @@ public class Video extends Multimedia implements LibraryIO {
         setType(getClass().getSimpleName());
     }
 
-    public Video(String title, String publisher, String director, String screenwriter) {
-        super(title, publisher);
+    public Video(String title, String publisher, String subDefine, String director, String screenwriter) {
+        super(title, publisher, subDefine);
         this.director = director;
         this.screenwriter = screenwriter;
         setInternalID(4);

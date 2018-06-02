@@ -19,8 +19,8 @@ public class ArchiveFootage extends Video {
         setType(getClass().getSimpleName());
     }
 
-    public ArchiveFootage(String title, String publisher, String director, String screenwriter, boolean regionalHistory, boolean propaganda) {
-        super(title, publisher, director, screenwriter);
+    public ArchiveFootage(String title, String publisher, String subDefine, String director, String screenwriter, boolean regionalHistory, boolean propaganda) {
+        super(title, publisher, subDefine, director, screenwriter);
         this.regionalHistory = regionalHistory;
         this.propaganda = propaganda;
         setInternalID(16);

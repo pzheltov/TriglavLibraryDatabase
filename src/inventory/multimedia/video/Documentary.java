@@ -4,25 +4,22 @@ import inventory.LibraryDatabase;
 
 public class Documentary extends Video {
     private boolean color;
-    private int topic;
 
     public Documentary() {
-        this(false, 4);
+        this(false);
         setInternalID(12);
         setType(getClass().getSimpleName());
     }
 
-    public Documentary(boolean color, int topic) {
+    public Documentary(boolean color) {
         this.color = color;
-        this.topic = topic;
         setInternalID(12);
         setType(getClass().getSimpleName());
     }
 
-    public Documentary(String title, String publisher, String director, String screenwriter, boolean color, int topic) {
-        super(title, publisher, director, screenwriter);
+    public Documentary(String title, String publisher, String subDefine, String director, String screenwriter, boolean color) {
+        super(title, publisher, subDefine, director, screenwriter);
         this.color = color;
-        this.topic = topic;
         setInternalID(12);
         setType(getClass().getSimpleName());
 
@@ -38,19 +35,10 @@ public class Documentary extends Video {
         this.color = color;
     }
 
-    public int getTopic() {
-        return topic;
-    }
-
-    public void setTopic(int topic) {
-        this.topic = topic;
-    }
-
     @Override
     public String toString() {
         return "Documentary{" +
                 "color=" + color +
-                ", topic=" + topic +
                 '}';
     }
 
@@ -61,9 +49,6 @@ public class Documentary extends Video {
         sb.append(super.returnFinalInfo())
                 .append("Multicolor: ")
                 .append(isColor())
-                .append("\r\n")
-                .append("Topic: ")
-                .append(getTopic())
                 .append("\r\n");
 
         return sb;
@@ -75,8 +60,6 @@ public class Documentary extends Video {
 
         sb.append(super.returnRawInfo())
                 .append(isColor())
-                .append("\r\n")
-                .append(getTopic())
                 .append("\r\n");
 
         return sb;

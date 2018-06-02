@@ -19,8 +19,8 @@ public class Podcast extends Audio {
         setType(getClass().getSimpleName());
     }
 
-    public Podcast(String title, String publisher, String format, boolean availableOffline, boolean featuredOnItunes) {
-        super(title, publisher, format);
+    public Podcast(String title, String publisher, String subDefine, String format, boolean availableOffline, boolean featuredOnItunes) {
+        super(title, publisher, subDefine, format);
         this.availableOffline = availableOffline;
         this.featuredOnItunes = featuredOnItunes;
         setInternalID(18);

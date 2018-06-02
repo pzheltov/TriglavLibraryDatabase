@@ -1,4 +1,6 @@
 /*
+MASTER
+
 Triglav Library Database has two main classes.
 
 >> For interacting with the program through JavaFX GUI, this is the main class.
@@ -9,11 +11,18 @@ Triglav Library Database has two main classes.
 package gui;
 
 import inventory.FalseDatabaseStarter;
+import inventory.Inventory;
+import inventory.LibraryDatabase;
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -22,7 +31,7 @@ import javafx.stage.Stage;
 This is the main window and where most operations are performed.
 Introductory windows or similar are not in consideration yet.
  */
-public class MainGUI extends Application {
+public class MainLaunchGUI extends Application {
     public static void main(String[] args) {
 
         // Delete this
@@ -43,31 +52,30 @@ public class MainGUI extends Application {
             Button about = new Button("About");
             Button exit = new Button("Exit");
 
-            {
-                // Set button size
-                overview.setMinSize(90, 30);
-                overview.setMaxSize(30, 10);
 
-                addItem.setMinSize(90, 30);
-                addItem.setMaxSize(30, 10);
+            // Set button size
+            overview.setMinSize(90, 30);
+            overview.setMaxSize(30, 10);
 
-                importLibrary.setMinSize(90, 30);
-                importLibrary.setMaxSize(30, 10);
+            addItem.setMinSize(90, 30);
+            addItem.setMaxSize(30, 10);
 
-                exportLibrary.setMinSize(90, 30);
-                exportLibrary.setMaxSize(30, 10);
+            importLibrary.setMinSize(90, 30);
+            importLibrary.setMaxSize(30, 10);
 
-                about.setMinSize(90, 30);
-                about.setMaxSize(30, 10);
+            exportLibrary.setMinSize(90, 30);
+            exportLibrary.setMaxSize(30, 10);
 
-                exit.setMinSize(90, 30);
-                exit.setMaxSize(90, 30);
+            about.setMinSize(90, 30);
+            about.setMaxSize(30, 10);
 
-            }
+            exit.setMinSize(90, 30);
+            exit.setMaxSize(90, 30);
+
 
             // VBox for holding button controls
-            VBox controls = new VBox(10);
-            controls.setPadding(new Insets(20));
+            VBox controls = new VBox(15);
+            controls.setPadding(new Insets(10));
             controls.getChildren().addAll(overview, addItem, importLibrary, exportLibrary, about, exit);
 
             // Control button commands
@@ -76,7 +84,7 @@ public class MainGUI extends Application {
             exportLibrary.setOnAction(e -> {
                 try {
                     // Button press creates new window where user inputs file name. File name is sent to supportBox to be printed as export file name
-                    SupportBox.printInfo(AlertBox.importExportBox("Export Library", "Enter File Name: "));
+                    PeripheralBox.printInfo(AlertBox.importExportBox("Export Library", "Enter File Name: "));
                 } catch (Exception e1) {
 
                     System.out.println(e1.getMessage());
@@ -86,13 +94,35 @@ public class MainGUI extends Application {
             about.setOnAction(e -> AlertBox.credits());
             exit.setOnAction(e -> Platform.exit());
 
+            // Adding Table View of Inventory to the main screen
+
+            //Title column
+            TableColumn<Inventory, String> titleColumn = new TableColumn<>("Title");
+            titleColumn.setMinWidth(200);
+            titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
+
+            //Type column
+            TableColumn<Inventory, String> typeColumn = new TableColumn<>("Type");
+            typeColumn.setMinWidth(100);
+            typeColumn.setCellValueFactory(new PropertyValueFactory<>("type"));
+
+            //Status column
+            TableColumn<Inventory, String> statusColumn = new TableColumn<>("Status");
+            statusColumn.setMinWidth(100);
+            statusColumn.setCellValueFactory(new PropertyValueFactory<>("availability"));
+
+            TableView<Inventory> table = new TableView<Inventory>();
+            table.setItems(getInventory());
+            table.getColumns().addAll(statusColumn, typeColumn, titleColumn);
 
             // Main window will be made out of BorderPane
             BorderPane mainLayout = new BorderPane();
+            mainLayout.setPadding(new Insets(10));
             mainLayout.setLeft(controls);
+            mainLayout.setCenter(table);
 
             // Add layout to the scene
-            Scene mainScene = new Scene(mainLayout, 500, 300);
+            Scene mainScene = new Scene(mainLayout, 550, 400);
 
             // Add scene to the stage
             primaryStage.setScene(mainScene);
@@ -101,7 +131,7 @@ public class MainGUI extends Application {
             // Show alert box when closing the program
             primaryStage.setOnCloseRequest(event -> {
                 event.consume();
-                SupportBox.closingProgram();
+                PeripheralBox.closingProgram();
             });
 
             // Show
@@ -112,5 +142,16 @@ public class MainGUI extends Application {
             System.out.println(e.toString());
         }
 
+    }
+
+    //Get all of the inventory
+    public ObservableList<Inventory> getInventory() {
+        ObservableList<Inventory> inventory = FXCollections.observableArrayList();
+
+        for (int i = 0; i < LibraryDatabase.getInventoryList().size(); i++) {
+            inventory.add(LibraryDatabase.getInventoryList().get(i));
+        }
+
+        return inventory;
     }
 }
