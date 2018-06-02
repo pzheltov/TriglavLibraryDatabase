@@ -1,0 +1,66 @@
+package inventory.multimedia.audio;
+
+import inventory.LibraryDatabase;
+import inventory.multimedia.Multimedia;
+
+public class Audio extends Multimedia {
+    private String format;
+
+    public Audio() {
+        this("mp3");
+        setInternalID(6);
+        setType(getClass().getSimpleName());
+    }
+
+    public Audio(String format) {
+        this.format = format;
+        setInternalID(6);
+        setType(getClass().getSimpleName());
+    }
+
+    public Audio(String title, String publisher, String format) {
+        super(title, publisher);
+        this.format = format;
+        setInternalID(6);
+        setType(getClass().getSimpleName());
+
+        LibraryDatabase.addAudio(this);
+        LibraryDatabase.addInventory(this);
+    }
+
+    public String getFormat() {
+        return format;
+    }
+
+    public void setFormat(String format) {
+        this.format = format;
+    }
+
+    @Override
+    public String toString() {
+        return "Audio{" +
+                "format=" + format +
+                '}';
+    }
+
+    @Override
+    public StringBuilder returnFinalInfo() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(super.returnFinalInfo())
+                .append("Format: ")
+                .append(getFormat())
+                .append("\r\n");
+
+        return sb;
+    }
+
+    @Override
+    public StringBuilder returnRawInfo() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(super.returnRawInfo())
+                .append(getFormat())
+                .append("\r\n");
+
+        return sb;
+    }
+}
